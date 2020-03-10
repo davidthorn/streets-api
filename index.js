@@ -4,8 +4,8 @@ const port = 3000
 const bodyParser = require('body-parser')
 app.use(bodyParser.json({ type: 'application/json' }))
 
-const countries = require('./countries_api')
-const country = require('./country_api')
+const countries = require('./country/countries_api')
+const country = require('./country/country_api')
 
 app.get('/countries/:country', country.handler)
 app.get('/countries', countries.handler.get)

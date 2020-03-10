@@ -2,7 +2,7 @@ const fs = require('fs')
 
 class CountryModel {
 
-    path = "./api/countries.json"
+    path = "./db/countries.json"
     countries = []
     loaded = false
 

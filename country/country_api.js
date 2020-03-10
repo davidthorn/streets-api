@@ -1,5 +1,5 @@
 const fs = require('fs')
-const countryModel = require('./models/CountryModel')
+const countryModel = require('../models/CountryModel')
 
 exports.handler = (request, response) => {
     const model = countryModel.model()
