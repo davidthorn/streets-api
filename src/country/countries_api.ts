@@ -1,8 +1,8 @@
-const fs = require('fs')
-const countryModel = require('../models/CountryModel')
+import { Request, Response } from 'express'
+import { countryModel } from '../models/CountryModel'
 
-const postHandler = (request, response) => {
-    let model = countryModel.model()
+const postHandler = (request: Request, response: Response) => {
+    let model = countryModel()
     let body = request.body
     response.append('Content-Type' , 'application/json')
 
@@ -10,14 +10,14 @@ const postHandler = (request, response) => {
         response.status(422).send({
             message: "The name property is missing"
         })
-    } else if (model.containsName(body.name, body.country_id)) {
+    } else if (model.containsCountryWithName(body.name)) {
         response.status(422).send({
             message: "A country with this name already exists"
         })
     } else {
 
         const newCountry = Object.assign(body, {
-            id: model.nextId()
+            id: model.getNextId()
         })
         model.add(newCountry)
         const country = JSON.stringify(newCountry)
@@ -25,12 +25,15 @@ const postHandler = (request, response) => {
     }
 } 
 
-exports.handler = {
-    get: (request, response) => {
-        response.append('Content-Type' , 'application/json')
-        let model = countryModel.model()
-        let json = JSON.stringify(model.all())
-        response.send(json)
-    },
+const getHandler = (_: Request, response: Response) => {
+    response.append('Content-Type' , 'application/json')
+    let model = countryModel()
+    response.send(model.json())
+}
+
+const handler = {
+    get: getHandler,
     post: postHandler
 }
+
+export { handler as countriesHandler }
