@@ -2,6 +2,7 @@ const fs = require('fs')
 const countryModel = require('../models/CountryModel')
 
 exports.handler = (request, response) => {
+    response.append('Content-Type' , 'application/json')
     const model = countryModel.model()
     let countryId = request.params.country
 
