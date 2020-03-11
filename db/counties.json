@@ -1,1 +1,47 @@
-[{"name":"Surrey","country_id":1,"id":1},{"name":"Kent","country_id":1,"id":2},{"name":"Nordrhein Westfalen","country_id":6,"id":3},{"name":"Berlin","country_id":6,"id":4},{"name":"Hamburg","country_id":6,"id":5},{"name":"Bayern","country_id":6,"id":6},{"name":"Chūbu","country_id":16,"id":7},{"name":"Tōhoku","country_id":16,"id":8},{"name":"Kantō","country_id":16,"id":9}]
+[
+    {
+        "name": "Surrey",
+        "country_id": 1,
+        "id": 1
+    },
+    {
+        "name": "Kent",
+        "country_id": 1,
+        "id": 2
+    },
+    {
+        "name": "Nordrhein Westfalen",
+        "country_id": 6,
+        "id": 3
+    },
+    {
+        "name": "Berlin",
+        "country_id": 6,
+        "id": 4
+    },
+    {
+        "name": "Hamburg",
+        "country_id": 6,
+        "id": 5
+    },
+    {
+        "name": "Bayern",
+        "country_id": 6,
+        "id": 6
+    },
+    {
+        "name": "Chūbu",
+        "country_id": 16,
+        "id": 7
+    },
+    {
+        "name": "Tōhoku",
+        "country_id": 16,
+        "id": 8
+    },
+    {
+        "name": "Kantō",
+        "country_id": 16,
+        "id": 9
+    }
+]
